@@ -193,15 +193,15 @@ h3 {
   background: rgba(255, 255, 255, .97);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
-  /* Increased height for larger logo */
-  height: 100px;
+  /* Reduced height for a more compact design */
+  height: 70px;
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 70px;
 }
 
 .logo {
@@ -211,7 +211,7 @@ h3 {
 }
 
 .logo-img {
-  height: 80px;
+  height: 50px;
   width: auto;
   object-fit: contain;
 }
@@ -297,7 +297,7 @@ nav.desktop a:hover {
 #mobile-nav {
   display: none;
   position: fixed;
-  top: 100px;
+  top: 70px;
   left: 0;
   right: 0;
   background: #fff;
@@ -364,7 +364,7 @@ nav.desktop a:hover {
   min-height: 100svh;
   display: flex;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 70px;
   overflow: hidden;
   /* Solid fallback color renders instantly — prevents CLS from image load */
   background-color: var(--navy);
@@ -397,8 +397,8 @@ nav.desktop a:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 120px;
-  background: linear-gradient(to top, rgba(26, 46, 74, .5), transparent);
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, #ffffff);
   z-index: 1;
 }
 
@@ -545,17 +545,6 @@ nav.desktop a:hover {
   border: 2px solid rgba(201, 162, 39, .5);
   border-radius: 16px;
   z-index: -1;
-}
-
-.hero-photo-glow {
-  position: absolute;
-  top: -16px;
-  right: -16px;
-  width: 96px;
-  height: 96px;
-  background: rgba(201, 162, 39, .2);
-  border-radius: 50%;
-  filter: blur(32px);
 }
 
 /* =============================================
