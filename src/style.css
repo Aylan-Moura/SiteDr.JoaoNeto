@@ -234,7 +234,7 @@ nav.desktop a {
 
 nav.desktop a:hover {
   color: var(--navy);
-  background: var(--cream);
+  background: var(--white);
 }
 
 .header-actions {
@@ -261,7 +261,7 @@ nav.desktop a:hover {
 
 .icon-link:hover {
   color: #e1306c;
-  background: var(--cream);
+  background: var(--white);
 }
 
 .icon-link svg {
@@ -285,7 +285,7 @@ nav.desktop a:hover {
 }
 
 .menu-toggle:hover {
-  background: var(--cream);
+  background: var(--white);
 }
 
 .menu-toggle svg {
@@ -323,7 +323,7 @@ nav.desktop a:hover {
 }
 
 #mobile-nav a:hover {
-  background: var(--cream);
+  background: var(--white);
   color: var(--navy);
 }
 
@@ -347,7 +347,7 @@ nav.desktop a:hover {
 }
 
 #mobile-nav .mobile-actions a.icon-link-text:hover {
-  background: var(--cream);
+  background: var(--white);
 }
 
 #mobile-nav .btn {
@@ -388,18 +388,16 @@ nav.desktop a:hover {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: #000000;
+  /* Solid black as requested */
+  opacity: 0.85;
+  /* Keep some image depth but very dark */
   backdrop-filter: blur(4px);
 }
 
 .hero-bottom-fade {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 150px;
-  background: linear-gradient(to bottom, transparent, #ffffff);
-  z-index: 1;
+  display: none;
+  /* Removed for solid black as requested */
 }
 
 .hero-content {
@@ -551,7 +549,51 @@ nav.desktop a:hover {
        SOBRE (About)
        ============================================= */
 #sobre {
-  background: #fff;
+  background: var(--white);
+  position: relative;
+  overflow: visible;
+  padding-top: 0;
+  padding-bottom: 2rem;
+}
+
+#sobre::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: var(--white);
+  z-index: -1;
+}
+
+/* Card white layout */
+.sobre-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  /* More visible border */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  margin-top: -100px;
+  /* Overlap with hero */
+  position: relative;
+  z-index: 10;
+  padding: 6rem 0;
+  border-radius: var(--radius);
+  /* clip-path removed for cleaner transition */
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .sobre-card {
+    margin-top: -60px;
+    padding: 4rem 0;
+    border-radius: var(--radius);
+  }
+}
+
+/* Base style for sobre section */
+#sobre::after {
+  display: none;
 }
 
 .sobre-grid {
@@ -619,7 +661,7 @@ nav.desktop a:hover {
 }
 
 .stat-card {
-  background: var(--cream);
+  background: var(--white);
   border-radius: var(--radius);
   padding: 1.25rem 1rem;
   text-align: center;
@@ -676,7 +718,7 @@ nav.desktop a:hover {
        SERVIÇOS
        ============================================= */
 #servicos {
-  background: var(--cream);
+  background: var(--white);
 }
 
 .servicos-header {
@@ -870,7 +912,7 @@ nav.desktop a:hover {
 }
 
 .contact-card:hover {
-  background: var(--cream);
+  background: var(--white);
 }
 
 .contact-card-icon {
@@ -1408,6 +1450,10 @@ nav.desktop a:hover {
     gap: 2rem;
   }
 
+  .hero-content {
+    padding-bottom: 8rem;
+  }
+
   .hero-buttons {
     flex-direction: column;
   }
@@ -1482,11 +1528,11 @@ nav.desktop a:hover {
 }
 
 .faq-question:hover {
-  background: var(--cream);
+  background: var(--white);
 }
 
 .faq-item.open .faq-question {
-  background: var(--cream);
+  background: var(--white);
 }
 
 .faq-chevron {
