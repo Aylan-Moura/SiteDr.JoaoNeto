@@ -1603,11 +1603,29 @@ nav.desktop a:hover {
 }
 
 @media (max-width: 480px) {
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
 
   .stats-row {
     gap: .5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  .cards-grid::-webkit-scrollbar {
+    display: none; /* WebKit */
+  }
+
+  .cards-grid .service-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
   }
 }
